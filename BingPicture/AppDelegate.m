@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "KZImageViewController.h"
+#import <YTKNetwork.h>
+#import "KZBingImageApiRequest.h"
 
 @interface AppDelegate ()
 
@@ -15,6 +17,7 @@
 @property (strong,nonatomic) NSStatusItem *item;
 @property (strong) NSPopover *popover;
 @property(nonatomic)BOOL  isShow;
+@property (nonatomic,copy) NSString *url;
 
 @end
 
@@ -22,6 +25,23 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
+    config.baseUrl = @"https://www.bing.com";
+    config.cdnUrl = config.baseUrl;
+    
+    KZBingImageApiRequest *api = [[KZBingImageApiRequest alloc]initWithIDX:@"0" n:@"1"];
+    [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSDictionary *dict = request.responseJSONObject;
+        NSArray *imageArray = dict[@"images"];
+        NSDictionary *imageDict = imageArray.firstObject;
+        NSString *url = [NSString stringWithFormat:@"%@%@",config.baseUrl,imageDict[@"url"]];
+        self.url = url;
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+    
+    
     //获取系统单例NSStatusBar对象
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
     

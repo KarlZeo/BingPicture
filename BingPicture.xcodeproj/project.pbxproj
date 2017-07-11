@@ -14,6 +14,7 @@
 		A14BBBFB1F150D420033F7BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BBBFA1F150D420033F7BD /* main.m */; };
 		A15486381F1517C40060451E /* KZImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A15486361F1517C40060451E /* KZImageViewController.m */; };
 		A15486391F1517C40060451E /* KZImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15486371F1517C40060451E /* KZImageViewController.xib */; };
+		A154863C1F1519420060451E /* KZBingImageApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A154863B1F1519420060451E /* KZBingImageApiRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		A15486351F1517C40060451E /* KZImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KZImageViewController.h; sourceTree = "<group>"; };
 		A15486361F1517C40060451E /* KZImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KZImageViewController.m; sourceTree = "<group>"; };
 		A15486371F1517C40060451E /* KZImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KZImageViewController.xib; sourceTree = "<group>"; };
+		A154863A1F1519420060451E /* KZBingImageApiRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KZBingImageApiRequest.h; sourceTree = "<group>"; };
+		A154863B1F1519420060451E /* KZBingImageApiRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KZBingImageApiRequest.m; sourceTree = "<group>"; };
 		F67E1562AD21E39EF7E74711 /* Pods-BingPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingPicture/Pods-BingPicture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +96,8 @@
 				A15486351F1517C40060451E /* KZImageViewController.h */,
 				A15486361F1517C40060451E /* KZImageViewController.m */,
 				A15486371F1517C40060451E /* KZImageViewController.xib */,
+				A154863A1F1519420060451E /* KZBingImageApiRequest.h */,
+				A154863B1F1519420060451E /* KZBingImageApiRequest.m */,
 			);
 			path = BingPicture;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A15486381F1517C40060451E /* KZImageViewController.m in Sources */,
+				A154863C1F1519420060451E /* KZBingImageApiRequest.m in Sources */,
 				A14BBBFB1F150D420033F7BD /* main.m in Sources */,
 				A14BBBF31F150D420033F7BD /* AppDelegate.m in Sources */,
 			);
