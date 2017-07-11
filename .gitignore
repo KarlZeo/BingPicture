@@ -60,4 +60,9 @@ xcuserdata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+### CocoaPods ###
+*.xcworkspace
+Pods/
+
+
 # End of https://www.gitignore.io/api/macOS,xcode
