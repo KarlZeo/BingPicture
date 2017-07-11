@@ -26,6 +26,11 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
+    [self setupNetwork];
+    
+}
+
+-(void) setupNetwork {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = @"https://www.bing.com";
     config.cdnUrl = config.baseUrl;
@@ -37,11 +42,13 @@
         NSDictionary *imageDict = imageArray.firstObject;
         NSString *url = [NSString stringWithFormat:@"%@%@",config.baseUrl,imageDict[@"url"]];
         self.url = url;
+        [self setUpStatusBar];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
-    
-    
+}
+
+-(void) setUpStatusBar {
     //获取系统单例NSStatusBar对象
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
     
@@ -53,11 +60,6 @@
     [item.button setAction:@selector(itemAction:)];
     
     item.title = @"B";
-    
-//    item.button.image = [NSImage imageNamed:@"blue@2x.png"];
-    
-    //设置下拉菜单
-    // item.menu = self.shareMenu;
     
     //保存到属性变量
     self.item = item;
@@ -80,7 +82,6 @@
     
     self.isShow = ~self.isShow;
     
-    //    [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
