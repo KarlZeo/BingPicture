@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6587D6BC7C9193EAC79A1286 /* libPods-BingPicture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7EC441077C33780D4DDB85 /* libPods-BingPicture.a */; };
 		A14BBBF31F150D420033F7BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BBBF21F150D420033F7BD /* AppDelegate.m */; };
 		A14BBBF51F150D420033F7BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14BBBF41F150D420033F7BD /* Assets.xcassets */; };
 		A14BBBF81F150D420033F7BD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14BBBF61F150D420033F7BD /* MainMenu.xib */; };
@@ -14,6 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F7EC441077C33780D4DDB85 /* libPods-BingPicture.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BingPicture.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71B58C6FAF334236D18931A4 /* Pods-BingPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-BingPicture/Pods-BingPicture.release.xcconfig"; sourceTree = "<group>"; };
 		A14BBBEE1F150D420033F7BD /* BingPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14BBBF11F150D420033F7BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A14BBBF21F150D420033F7BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		A14BBBF91F150D420033F7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14BBBFA1F150D420033F7BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A14BBBFC1F150D420033F7BD /* BingPicture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BingPicture.entitlements; sourceTree = "<group>"; };
+		F67E1562AD21E39EF7E74711 /* Pods-BingPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingPicture/Pods-BingPicture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6587D6BC7C9193EAC79A1286 /* libPods-BingPicture.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		235F088A55C3CB7650A47B10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F7EC441077C33780D4DDB85 /* libPods-BingPicture.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		867184778F7D35B99759CE6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F67E1562AD21E39EF7E74711 /* Pods-BingPicture.debug.xcconfig */,
+				71B58C6FAF334236D18931A4 /* Pods-BingPicture.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A14BBBE51F150D420033F7BD = {
 			isa = PBXGroup;
 			children = (
 				A14BBBF01F150D420033F7BD /* BingPicture */,
 				A14BBBEF1F150D420033F7BD /* Products */,
+				867184778F7D35B99759CE6A /* Pods */,
+				235F088A55C3CB7650A47B10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,9 +96,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A14BBBFF1F150D420033F7BD /* Build configuration list for PBXNativeTarget "BingPicture" */;
 			buildPhases = (
+				54ACDD031B948EE1963F7974 /* [CP] Check Pods Manifest.lock */,
 				A14BBBEA1F150D420033F7BD /* Sources */,
 				A14BBBEB1F150D420033F7BD /* Frameworks */,
 				A14BBBEC1F150D420033F7BD /* Resources */,
+				1D6F0E96ABB098DD2A3F60A8 /* [CP] Embed Pods Frameworks */,
+				C79FD649ABA6639136E4FC57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,6 +155,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D6F0E96ABB098DD2A3F60A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingPicture/Pods-BingPicture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54ACDD031B948EE1963F7974 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C79FD649ABA6639136E4FC57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingPicture/Pods-BingPicture-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A14BBBEA1F150D420033F7BD /* Sources */ = {
@@ -258,6 +333,7 @@
 		};
 		A14BBC001F150D420033F7BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F67E1562AD21E39EF7E74711 /* Pods-BingPicture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BingPicture/BingPicture.entitlements;
@@ -272,6 +348,7 @@
 		};
 		A14BBC011F150D420033F7BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B58C6FAF334236D18931A4 /* Pods-BingPicture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BingPicture/BingPicture.entitlements;
