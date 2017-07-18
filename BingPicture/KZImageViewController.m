@@ -17,6 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    
+    self.imageView = [[NSButton alloc] initWithFrame:NSMakeRect(10, 10, self.view.bounds.size.width - 20, self.view.bounds.size.height - 20)];
+    self.imageView.wantsLayer = YES;
+    self.imageView.layer.backgroundColor = [NSColor redColor].CGColor;
+    self.imageView.title = @"";
+//    self.imageView.image
+    [self.view addSubview:self.imageView];
+}
+
+-(void)hahaha{
+    NSLog(@"123");
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface KZImageViewController : NSViewController
 
+@property (nonatomic,strong) NSButton *imageView;
+
 @end

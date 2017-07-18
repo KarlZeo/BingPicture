@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import "KZImageViewController.h"
-#import <YTKNetwork.h>
+#import "YTKNetwork.h"
 #import "KZBingImageApiRequest.h"
+#import "AFURLSessionManager.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,6 @@
 @property (strong,nonatomic) NSStatusItem *item;
 @property (strong) NSPopover *popover;
 @property(nonatomic)BOOL  isShow;
-@property (nonatomic,copy) NSString *url;
 
 @end
 
@@ -41,11 +41,28 @@
         NSArray *imageArray = dict[@"images"];
         NSDictionary *imageDict = imageArray.firstObject;
         NSString *url = [NSString stringWithFormat:@"%@%@",config.baseUrl,imageDict[@"url"]];
-        self.url = url;
+        NSString *filename = [NSString stringWithFormat:@"%@.jpg",imageDict[@"startdate"]];
+        
         [self setUpStatusBar];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
+}
+
+-(void)downloadWithUrl:(NSString *)urlString{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSPicturesDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        NSLog(@"File downloaded to: %@", filePath);
+    }];
+    [downloadTask resume];
 }
 
 -(void) setUpStatusBar {
@@ -69,7 +86,8 @@
 
 - (void) setUpPopover {
     self.popover = [[NSPopover alloc] init];
-    self.popover.contentViewController = [[KZImageViewController alloc] init];
+    KZImageViewController *vc = [[KZImageViewController alloc] init];
+    self.popover.contentViewController = vc;
     self.popover.behavior = NSPopoverBehaviorApplicationDefined;
 }
 

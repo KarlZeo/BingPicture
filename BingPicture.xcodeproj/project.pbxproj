@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6587D6BC7C9193EAC79A1286 /* libPods-BingPicture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7EC441077C33780D4DDB85 /* libPods-BingPicture.a */; };
+		516FF01C63DC77FA3C31D6D4 /* Pods_BingPicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01150B864DC396B2779808DC /* Pods_BingPicture.framework */; };
 		A14BBBF31F150D420033F7BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BBBF21F150D420033F7BD /* AppDelegate.m */; };
 		A14BBBF51F150D420033F7BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14BBBF41F150D420033F7BD /* Assets.xcassets */; };
 		A14BBBF81F150D420033F7BD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14BBBF61F150D420033F7BD /* MainMenu.xib */; };
@@ -15,10 +15,11 @@
 		A15486381F1517C40060451E /* KZImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A15486361F1517C40060451E /* KZImageViewController.m */; };
 		A15486391F1517C40060451E /* KZImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15486371F1517C40060451E /* KZImageViewController.xib */; };
 		A154863C1F1519420060451E /* KZBingImageApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A154863B1F1519420060451E /* KZBingImageApiRequest.m */; };
+		A18839DE1F1E31E700F2FE55 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19D3CA31F1E31D500C44CB8 /* Kingfisher.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F7EC441077C33780D4DDB85 /* libPods-BingPicture.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BingPicture.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01150B864DC396B2779808DC /* Pods_BingPicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingPicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B58C6FAF334236D18931A4 /* Pods-BingPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-BingPicture/Pods-BingPicture.release.xcconfig"; sourceTree = "<group>"; };
 		A14BBBEE1F150D420033F7BD /* BingPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14BBBF11F150D420033F7BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,6 +34,7 @@
 		A15486371F1517C40060451E /* KZImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KZImageViewController.xib; sourceTree = "<group>"; };
 		A154863A1F1519420060451E /* KZBingImageApiRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KZBingImageApiRequest.h; sourceTree = "<group>"; };
 		A154863B1F1519420060451E /* KZBingImageApiRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KZBingImageApiRequest.m; sourceTree = "<group>"; };
+		A19D3CA31F1E31D500C44CB8 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/BingPicture-elyyplzvwnrwvceenfearjfanyvo/Build/Products/Debug/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		F67E1562AD21E39EF7E74711 /* Pods-BingPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingPicture/Pods-BingPicture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,7 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6587D6BC7C9193EAC79A1286 /* libPods-BingPicture.a in Frameworks */,
+				A18839DE1F1E31E700F2FE55 /* Kingfisher.framework in Frameworks */,
+				516FF01C63DC77FA3C31D6D4 /* Pods_BingPicture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +54,8 @@
 		235F088A55C3CB7650A47B10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5F7EC441077C33780D4DDB85 /* libPods-BingPicture.a */,
+				A19D3CA31F1E31D500C44CB8 /* Kingfisher.framework */,
+				01150B864DC396B2779808DC /* Pods_BingPicture.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +141,12 @@
 				TargetAttributes = {
 					A14BBBED1F150D420033F7BD = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -354,12 +364,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BingPicture/BingPicture.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8Z364AJ4ML;
 				INFOPLIST_FILE = BingPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kz.BingPicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -369,12 +382,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BingPicture/BingPicture.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8Z364AJ4ML;
 				INFOPLIST_FILE = BingPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kz.BingPicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

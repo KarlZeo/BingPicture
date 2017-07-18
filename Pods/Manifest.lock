@@ -12,6 +12,7 @@ PODS:
   - AFNetworking/Reachability (3.1.0)
   - AFNetworking/Security (3.1.0)
   - AFNetworking/Serialization (3.1.0)
+  - Kingfisher (3.10.3)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -19,14 +20,16 @@ PODS:
     - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
+  - Kingfisher (~> 3.0)
   - SDWebImage (~> 4.0)
   - YTKNetwork
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
 
-PODFILE CHECKSUM: d84e083b8b2e454ca819be38a5d6034eaf140c48
+PODFILE CHECKSUM: b38e8ae85cfd724d9a4949131704d11b7016dc8b
 
 COCOAPODS: 1.2.1
