@@ -22,7 +22,7 @@
     self.imageView.wantsLayer = YES;
     self.imageView.layer.backgroundColor = [NSColor redColor].CGColor;
     self.imageView.title = @"";
-//    self.imageView.image
+    
     [self.view addSubview:self.imageView];
 }
 

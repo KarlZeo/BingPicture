@@ -15,7 +15,6 @@
 		A15486381F1517C40060451E /* KZImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A15486361F1517C40060451E /* KZImageViewController.m */; };
 		A15486391F1517C40060451E /* KZImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15486371F1517C40060451E /* KZImageViewController.xib */; };
 		A154863C1F1519420060451E /* KZBingImageApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A154863B1F1519420060451E /* KZBingImageApiRequest.m */; };
-		A18839DE1F1E31E700F2FE55 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19D3CA31F1E31D500C44CB8 /* Kingfisher.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +33,8 @@
 		A15486371F1517C40060451E /* KZImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KZImageViewController.xib; sourceTree = "<group>"; };
 		A154863A1F1519420060451E /* KZBingImageApiRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KZBingImageApiRequest.h; sourceTree = "<group>"; };
 		A154863B1F1519420060451E /* KZBingImageApiRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KZBingImageApiRequest.m; sourceTree = "<group>"; };
+		A18839DF1F1E386000F2FE55 /* BingPicture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BingPicture-Bridging-Header.h"; sourceTree = "<group>"; };
+		A18839E31F1E38DF00F2FE55 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A19D3CA31F1E31D500C44CB8 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/BingPicture-elyyplzvwnrwvceenfearjfanyvo/Build/Products/Debug/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		F67E1562AD21E39EF7E74711 /* Pods-BingPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingPicture/Pods-BingPicture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,7 +44,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A18839DE1F1E31E700F2FE55 /* Kingfisher.framework in Frameworks */,
 				516FF01C63DC77FA3C31D6D4 /* Pods_BingPicture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +102,8 @@
 				A15486371F1517C40060451E /* KZImageViewController.xib */,
 				A154863A1F1519420060451E /* KZBingImageApiRequest.h */,
 				A154863B1F1519420060451E /* KZBingImageApiRequest.m */,
+				A18839DF1F1E386000F2FE55 /* BingPicture-Bridging-Header.h */,
+				A18839E31F1E38DF00F2FE55 /* PrefixHeader.pch */,
 			);
 			path = BingPicture;
 			sourceTree = "<group>";
@@ -141,6 +143,7 @@
 				TargetAttributes = {
 					A14BBBED1F150D420033F7BD = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.iCloud = {
@@ -363,16 +366,22 @@
 			baseConfigurationReference = F67E1562AD21E39EF7E74711 /* Pods-BingPicture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BingPicture/BingPicture.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8Z364AJ4ML;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = BingPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kz.BingPicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BingPicture/BingPicture-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -381,16 +390,21 @@
 			baseConfigurationReference = 71B58C6FAF334236D18931A4 /* Pods-BingPicture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BingPicture/BingPicture.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8Z364AJ4ML;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = BingPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kz.BingPicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BingPicture/BingPicture-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

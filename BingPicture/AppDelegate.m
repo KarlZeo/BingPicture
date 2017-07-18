@@ -18,6 +18,7 @@
 @property (strong,nonatomic) NSStatusItem *item;
 @property (strong) NSPopover *popover;
 @property(nonatomic)BOOL  isShow;
+@property (nonatomic,strong) NSURL *fileURL;
 
 @end
 
@@ -42,14 +43,14 @@
         NSDictionary *imageDict = imageArray.firstObject;
         NSString *url = [NSString stringWithFormat:@"%@%@",config.baseUrl,imageDict[@"url"]];
         NSString *filename = [NSString stringWithFormat:@"%@.jpg",imageDict[@"startdate"]];
-        
+        [self downloadWithUrl:url FileName:filename];
         [self setUpStatusBar];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
 }
 
--(void)downloadWithUrl:(NSString *)urlString{
+-(NSURL *)downloadWithUrl:(NSString *)urlString FileName :(NSString *)fileName{
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
@@ -58,11 +59,13 @@
     
     NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
         NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSPicturesDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+        return [documentsDirectoryURL URLByAppendingPathComponent:fileName];
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
         NSLog(@"File downloaded to: %@", filePath);
+        self.fileURL = filePath;
     }];
     [downloadTask resume];
+    return  self.fileURL;
 }
 
 -(void) setUpStatusBar {
