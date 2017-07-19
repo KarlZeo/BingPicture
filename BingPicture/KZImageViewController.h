@@ -12,4 +12,6 @@
 
 @property (nonatomic,strong) NSButton *imageView;
 
+@property (nonatomic,strong) NSURL *fileUrl;
+
 @end

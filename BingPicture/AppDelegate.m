@@ -35,7 +35,7 @@
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = @"https://www.bing.com";
     config.cdnUrl = config.baseUrl;
-    
+    [self setUpStatusBar];
     KZBingImageApiRequest *api = [[KZBingImageApiRequest alloc]initWithIDX:@"0" n:@"1"];
     [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSDictionary *dict = request.responseJSONObject;
@@ -44,7 +44,6 @@
         NSString *url = [NSString stringWithFormat:@"%@%@",config.baseUrl,imageDict[@"url"]];
         NSString *filename = [NSString stringWithFormat:@"%@.jpg",imageDict[@"startdate"]];
         [self downloadWithUrl:url FileName:filename];
-        [self setUpStatusBar];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
@@ -58,15 +57,25 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSPicturesDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
         return [documentsDirectoryURL URLByAppendingPathComponent:fileName];
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
-        NSLog(@"File downloaded to: %@", filePath);
+//        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+//        NSNotification *notify = [NSNotification notificationWithName:@"fileurl" object:filePath];
+//        [center postNotification:notify];
         self.fileURL = filePath;
+        [self setUpPopover];
     }];
     [downloadTask resume];
     return  self.fileURL;
 }
+
+//-(NSString *)getDocumentsPath{
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSPicturesDirectory, NSUserDomainMask, YES);
+//    NSString *path = [paths objectAtIndex:0];
+//    NSLog(@"path:%@", path);
+//    return path;
+//}
 
 -(void) setUpStatusBar {
     //获取系统单例NSStatusBar对象
@@ -84,13 +93,14 @@
     //保存到属性变量
     self.item = item;
     
-    [self setUpPopover];
 }
 
 - (void) setUpPopover {
     self.popover = [[NSPopover alloc] init];
+    [self.popover setContentSize:NSMakeSize(660, 380)];
     KZImageViewController *vc = [[KZImageViewController alloc] init];
     self.popover.contentViewController = vc;
+    vc.fileUrl = self.fileURL;
     self.popover.behavior = NSPopoverBehaviorApplicationDefined;
 }
 

@@ -7,6 +7,4 @@ use_frameworks!
 
   # Pods for BingPicture
   pod 'YTKNetwork'
-  pod 'SDWebImage', '~>4.0'
-  pod 'Kingfisher', '~> 3.0'
 end
