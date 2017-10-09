@@ -72,7 +72,7 @@
 		A14BBBE51F150D420033F7BD = {
 			isa = PBXGroup;
 			children = (
-				A14BBBF01F150D420033F7BD /* BingPicture */,
+				A14BBBF01F150D420033F7BD /* DailyPicture */,
 				A14BBBEF1F150D420033F7BD /* Products */,
 				867184778F7D35B99759CE6A /* Pods */,
 				235F088A55C3CB7650A47B10 /* Frameworks */,
@@ -87,7 +87,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A14BBBF01F150D420033F7BD /* BingPicture */ = {
+		A14BBBF01F150D420033F7BD /* DailyPicture */ = {
 			isa = PBXGroup;
 			children = (
 				A14BBBF11F150D420033F7BD /* AppDelegate.h */,
@@ -105,6 +105,7 @@
 				A18839DF1F1E386000F2FE55 /* BingPicture-Bridging-Header.h */,
 				A18839E31F1E38DF00F2FE55 /* PrefixHeader.pch */,
 			);
+			name = DailyPicture;
 			path = BingPicture;
 			sourceTree = "<group>";
 		};
@@ -376,8 +377,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = BingPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kz.BingPicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BingPicture/BingPicture-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -400,8 +403,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = BingPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kz.BingPicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BingPicture/BingPicture-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
